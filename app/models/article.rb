@@ -1,20 +1,19 @@
 class Article
-  attr_accessor :title, :description, :posted_at, :url, :contributor, :category
 
-  @@all = []
 
-  def initialize(article, category)
-    @title = article["title"]
-    @description = article["description"]
-    @posted_at = article["publishedAt"]
-    @url = article["url"]
-    @contributor = article["contributor"]
-    @category = category
-    self.class.all << self
+  attr_accessor :title, :author, :magazine
+
+  ALL = []
+
+  def initialize(title, author, magazine)
+    @title = title
+    @author = author
+    @magazine = magazine
+    ALL << self
   end
 
   def self.all
-    @@all
+    ALL
   end
   
   # Article.find_all_by_category("Weird")
@@ -24,5 +23,7 @@ class Article
       article.category.name == category
     end
   end
+
+
 
 end
