@@ -1,10 +1,9 @@
 class Author
-  attr_accessor :name, :age
+  attr_accessor :name
   ALL = []
 
-  def initialize(name, age)
+  def initialize(name)
     @name = name
-    @age = age
     ALL << self
   end
 
@@ -22,18 +21,6 @@ class Author
     articles.map do |article|
       article.magazine
     end.uniq
-  end
-
-  def self.find_oldest
-    oldest_age = 0
-    oldest_author = nil
-    Author.all.each do |author|
-      if author.age > oldest_age
-        oldest_age = author.age
-        oldest_author = author
-      end
-    end
-    oldest_author
   end
 
   def add_article(title, magazine)

@@ -21,8 +21,8 @@ class Magazine
     Article.all.select{ |article| article.magazine == self}
   end
 
-  def article_names
-    articles.map {|article| article.name}
+  def article_titles
+    articles.map {|article| article.title}
   end
 
 
